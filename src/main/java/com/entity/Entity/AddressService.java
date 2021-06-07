@@ -15,10 +15,23 @@ public class AddressService {
         this.addressRepository = addressRepository;
     }
 
-    public void createNewAddress(String streetName,
-                                 Long number, String neighbourhood,
-                                 String city, String state, String country, String zipCode){
-        AddressEntity addressEntity = new AddressEntity(streetName, number, neighbourhood, city, state, country, zipCode);
+    public void getRandomAddressBasedOnCEP(AddressEntity addressEntity){
+        URL url = new URL("http://geradornv.com.br/wp-json/api/cep/random-by-states");
+        HttpURLConnection httpURLConnection = url.openConnection();
+        url.setRequestMethod("GET");
+        int responseCode = url.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            HttpResponse<JsonNode> response = Unirest.get(url)
+                    .queryString("state","SP")
+                    .asString();
+            //Results in random CEP searches based on Sao Paulo state
+        }
+        url.disconnect();
+    }
+
+    public void createNewAddress(){
+        AddressEntity addressEntity = new AddressEntity();
+        getRandomAddressBasedOnCEP(addressEntity);
         if (addressEntity.getLatitude() == null){
 
         }

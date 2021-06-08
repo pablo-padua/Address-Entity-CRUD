@@ -1,5 +1,5 @@
 # Address Entity CRUD
-Developing a simple Address CRUD with Java and SpringBoot/Maven.
+Developing a simple Address CRUD using Java, SpringBoot, Maven and PostgreSQL.
 
 - Create method - Random valid address data generated using the <a href="https://geradornv.com.br/gerador-cep/">Gerador CEP</a> website.
   - Latitude and Longitude data taken from the <a href="https://developers.google.com/maps/documentation/geocoding/start">google maps api</a>.

@@ -13,6 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+/**
+ * Address Entity
+ * @author Pablo Padua
+ */
 @Entity
 @Table(name = "ADDRESS")
 @Getter
@@ -33,7 +37,6 @@ public class AddressEntity implements Serializable {
     @Column(name = "NUMBER")
     private Long number;
 
-    @NotNull
     @Column(name = "COMPLEMENT")
     private String complement;
 
@@ -75,5 +78,21 @@ public class AddressEntity implements Serializable {
         this.state = state;
         this.country = country;
         this.zipCode = zipCode;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

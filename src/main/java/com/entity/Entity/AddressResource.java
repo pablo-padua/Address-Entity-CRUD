@@ -43,8 +43,7 @@ public class AddressResource {
      **/
     @PostMapping("/create-hardcoded")
     public ResponseEntity<AddressEntity> createHardcodedAddress(){
-        AddressEntity result = addressService.createHardcodedAddress();
-        return new ResponseEntity<>(result, HttpStatus.CREATED);
+        return new ResponseEntity<>(addressService.createHardcodedAddress(), HttpStatus.CREATED);
     }
 
     /**
